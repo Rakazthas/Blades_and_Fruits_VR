@@ -6,9 +6,20 @@ public class Slicer : MonoBehaviour
     public LayerMask sliceMask;
     public bool isTouched;
 
+    public float sliceDelay = 1.0f;
+    private float timer;
+
+    private void Start()
+    {
+        timer = 0.0f;
+    }
+
     private void Update()
     {
-        if (isTouched == true)
+        timer -= Time.deltaTime;
+        timer = timer < 0 ? 0 : timer;
+
+        if (isTouched == true && timer == 0.0f )
         {
             isTouched = false;
 
@@ -31,6 +42,8 @@ public class Slicer : MonoBehaviour
                 MakeItPhysical(lowerHullGameobject);
 
                 Destroy(objectToBeSliced.gameObject);
+
+                timer = sliceDelay;
             }
         }
     }
