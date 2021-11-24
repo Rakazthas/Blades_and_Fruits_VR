@@ -24,6 +24,9 @@ public class Slicer : MonoBehaviour
                 upperHullGameobject.transform.position = objectToBeSliced.transform.position;
                 lowerHullGameobject.transform.position = objectToBeSliced.transform.position;
 
+                upperHullGameobject.layer=6;
+                lowerHullGameobject.layer=6;
+
                 MakeItPhysical(upperHullGameobject);
                 MakeItPhysical(lowerHullGameobject);
 
