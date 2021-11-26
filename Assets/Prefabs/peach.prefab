@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3583380271082815698}
   - component: {fileID: 3597072585889677714}
   - component: {fileID: 3597072585889677713}
+  - component: {fileID: -7324611930381507423}
   m_Layer: 6
   m_Name: peach
-  m_TagString: Object
+  m_TagString: Peach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,3 +114,16 @@ CapsuleCollider:
   m_Height: 0.015081163
   m_Direction: 1
   m_Center: {x: 0.0010625503, y: 0.00045279335, z: 0.0000000018626448}
+--- !u!114 &-7324611930381507423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597852895513546060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9d84b522e512146b98417da95f105b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitValue: 50

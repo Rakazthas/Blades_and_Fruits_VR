@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
 
     private int currDiff = 1;
 
-    private RectTransform Parentrt;
+    private Vector3 size;
     private float width;
     private float length;
 
@@ -36,44 +36,58 @@ public class Spawner : MonoBehaviour
         timer = 1 / (baseFrequency * currDiff);
         diffTimer = diffChangeTimer;
 
+        size = parent.GetComponent<MeshRenderer>().bounds.size;
+        length = size.x;
+        width = size.z;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        diffTimer -= Time.deltaTime;
-
-        if(timer <= 0)
+        if (GlobalVars.inGame)
         {
-            timer = 1 / (baseFrequency * currDiff);
-            int nbObjects = Random.Range(1, maxNbObjects +1);
+            timer -= Time.deltaTime;
+            diffTimer -= Time.deltaTime;
 
-            for(int i = 0; i < nbObjects; i++)
+            if (timer <= 0)
             {
-                Vector3 start = transform.position;
+                timer = 1 / (baseFrequency * currDiff);
+                int nbObjects = Random.Range(1, maxNbObjects + 1);
 
-                int typeFruit = Random.Range(0, listSize);
-                GameObject fruit = Instantiate(fruitsPrefabs[typeFruit], start, transform.rotation); // a ajuster via tests
+                for (int i = 0; i < nbObjects; i++)
+                {
+                    Vector3 start = transform.position;
+                    float randX = Random.Range(-length / 2, length / 2);
+                    float randZ = Random.Range(-width / 2, width / 2);
+                    start += new Vector3(randX, 0.0f, randZ);
 
-                fruit.GetComponent<Rigidbody>().velocity = new Vector3(0.0f, fruitSpeed, 0.0f);
-                
+                    int typeFruit = Random.Range(0, listSize);
+                    GameObject fruit = Instantiate(fruitsPrefabs[typeFruit], start, transform.rotation); // a ajuster via tests
+
+                    fruit.GetComponent<Rigidbody>().velocity = new Vector3(0.0f, fruitSpeed, 0.0f);
+
+                }
+
+                if (Random.Range(0.0f, 1.0f) < bombBaseProba && bombPrefab != null)
+                {
+                    Vector3 start = transform.position;
+
+                    float randX = Random.Range(-length / 2, length / 2);
+                    float randZ = Random.Range(-width / 2, width / 2);
+                    start += new Vector3(randX, 0.0f, randZ);
+
+                    GameObject bomb = Instantiate(bombPrefab, start, transform.rotation * Quaternion.Euler(0, -90, 0)); // a ajuster via tests
+
+                    bomb.GetComponent<Rigidbody>().velocity = new Vector3(fruitSpeed, 0.0f, 0.0f);
+                }
             }
 
-            if(Random.Range(0.0f, 1.0f) < bombBaseProba && bombPrefab != null)
+            if (diffTimer <= 0)
             {
-                Vector3 start = transform.position;
-
-                GameObject bomb = Instantiate(bombPrefab, start, transform.rotation * Quaternion.Euler(0, -90, 0)); // a ajuster via tests
-
-                bomb.GetComponent<Rigidbody>().velocity = new Vector3(fruitSpeed, 0.0f, 0.0f);
+                diffTimer = diffChangeTimer;
+                currDiff += 1;
             }
         }
-
-        if(diffTimer <= 0)
-        {
-            diffTimer = diffChangeTimer;
-            currDiff += 1;
-        }
+        
     }
 }

@@ -27,6 +27,7 @@ public class Slicer : MonoBehaviour
             
             foreach (Collider objectToBeSliced in objectsToBeSliced)
             {
+
                 SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, materialAfterSlice);
 
                 GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, materialAfterSlice);

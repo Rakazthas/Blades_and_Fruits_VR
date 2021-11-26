@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2316907743357006701}
   - component: {fileID: 2338909430010860233}
   - component: {fileID: 2338909430010860232}
+  - component: {fileID: -676679264540899484}
   m_Layer: 6
   m_Name: pear
-  m_TagString: Object
+  m_TagString: Pear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,3 +114,16 @@ CapsuleCollider:
   m_Height: 0.0125630945
   m_Direction: 1
   m_Center: {x: 0.00037519564, y: -0.000031866824, z: 0}
+--- !u!114 &-676679264540899484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338280331566089923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9d84b522e512146b98417da95f105b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitValue: 50

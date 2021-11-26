@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class despawn : MonoBehaviour
+public class FruitSliced : MonoBehaviour
 {
+    public float fruitValue = 50.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +20,9 @@ public class despawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Sliceable"))
+        if (other.CompareTag("Sword"))
         {
-            if (!other.CompareTag("Bomb"))
-                GlobalVars.lives -= 1;
-
-            Destroy(other.gameObject);
+            GlobalVars.score += fruitValue;
         }
     }
 }
