@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 139825116}
   - component: {fileID: 139825115}
   - component: {fileID: 139825114}
+  - component: {fileID: 139825119}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -143,30 +144,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &139825114
-MonoBehaviour:
+--- !u!65 &139825114
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139825113}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dbc44319dbe8844eb03ce07c31c6160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseFrequency: 0.5
-  diffChangeTimer: 10
-  bombBaseProba: 0.2
-  maxNbObjects: 4
-  fruitSpeed: 2
-  fruitsPrefabs:
-  - {fileID: 3270669683748822282, guid: 73fc02507e5ce1f40a233ef58d00b30d, type: 3}
-  - {fileID: 3597852895513546060, guid: f0476a017de06cb48b0a24f2f3ef1a29, type: 3}
-  - {fileID: 7945807206814606387, guid: 34f55d3145b41f347aaa5d3a3a4ee0dc, type: 3}
-  - {fileID: 2338280331566089923, guid: 254f21be8155c0f46a780fa506475c6e, type: 3}
-  - {fileID: 2105914086393542591, guid: d21c6a95ef2ee904d8e050f88055191f, type: 3}
-  bombPrefab: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 60, y: 2.220446e-16, z: 60}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &139825115
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -245,6 +235,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &139825119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139825113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2787c87edf66d094da5e91c1804a0f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &914267061
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2061721506}
+  - component: {fileID: 2061721507}
   m_Layer: 0
   m_Name: spawn
   m_TagString: Untagged
@@ -477,10 +480,34 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061721505}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 139825118}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &2061721507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061721505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbc44319dbe8844eb03ce07c31c6160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseFrequency: 0.5
+  diffChangeTimer: 10
+  bombBaseProba: 0.2
+  maxNbObjects: 1
+  fruitSpeed: 7
+  fruitsPrefabs:
+  - {fileID: 3270669683748822282, guid: 73fc02507e5ce1f40a233ef58d00b30d, type: 3}
+  - {fileID: 3597852895513546060, guid: f0476a017de06cb48b0a24f2f3ef1a29, type: 3}
+  - {fileID: 7945807206814606387, guid: 34f55d3145b41f347aaa5d3a3a4ee0dc, type: 3}
+  - {fileID: 2338280331566089923, guid: 254f21be8155c0f46a780fa506475c6e, type: 3}
+  - {fileID: 2105914086393542591, guid: d21c6a95ef2ee904d8e050f88055191f, type: 3}
+  bombPrefab: {fileID: 0}

@@ -38,6 +38,9 @@ public class Slicer : MonoBehaviour
                 upperHullGameobject.layer=6;
                 lowerHullGameobject.layer=6;
 
+                upperHullGameobject.tag = "Object";
+                lowerHullGameobject.tag = "Object";
+
                 MakeItPhysical(upperHullGameobject);
                 MakeItPhysical(lowerHullGameobject);
 

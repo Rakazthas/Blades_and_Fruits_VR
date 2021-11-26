@@ -16,6 +16,8 @@ public class Spawner : MonoBehaviour
     public GameObject[] fruitsPrefabs;
     public GameObject bombPrefab;
 
+    public GameObject parent;
+
 
     private float timer;
     private float diffTimer;
@@ -23,12 +25,17 @@ public class Spawner : MonoBehaviour
 
     private int currDiff = 1;
 
+    private RectTransform Parentrt;
+    private float width;
+    private float length;
+
     // Start is called before the first frame update
     void Start()
     {
         listSize = fruitsPrefabs.Length;
         timer = 1 / (baseFrequency * currDiff);
         diffTimer = diffChangeTimer;
+
     }
 
     // Update is called once per frame
@@ -47,9 +54,9 @@ public class Spawner : MonoBehaviour
                 Vector3 start = transform.position;
 
                 int typeFruit = Random.Range(0, listSize);
-                GameObject fruit = Instantiate(fruitsPrefabs[typeFruit], start, transform.rotation * Quaternion.Euler(0, -90, 0)); // a ajuster via tests
+                GameObject fruit = Instantiate(fruitsPrefabs[typeFruit], start, transform.rotation); // a ajuster via tests
 
-                fruit.GetComponent<Rigidbody>().velocity = new Vector3(fruitSpeed, 0.0f, 0.0f);
+                fruit.GetComponent<Rigidbody>().velocity = new Vector3(0.0f, fruitSpeed, 0.0f);
                 
             }
 
