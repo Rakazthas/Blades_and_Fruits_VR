@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FruitSliced : MonoBehaviour
+public class MenuHandler : MonoBehaviour
 {
-    public int fruitValue = 50;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +14,5 @@ public class FruitSliced : MonoBehaviour
     void Update()
     {
         
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Sword"))
-        {
-            GlobalVars.score += fruitValue;
-        }
     }
 }
