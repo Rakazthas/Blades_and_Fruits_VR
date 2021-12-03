@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MenuHandler : MonoBehaviour
 {
+    public GameObject mainMenu;
+    public GameObject scoreMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +18,17 @@ public class MenuHandler : MonoBehaviour
     {
         
     }
+
+    void goToScore()
+    {
+        mainMenu.SetActive(false);
+        scoreMenu.SetActive(true);
+    }
+
+    void goToMain()
+    {
+        mainMenu.SetActive(true);
+        scoreMenu.SetActive(false);
+    }
+
 }
