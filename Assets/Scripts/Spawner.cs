@@ -62,7 +62,7 @@ public class Spawner : MonoBehaviour
                     start += new Vector3(randX, 0.0f, randZ);
 
                     int typeFruit = Random.Range(0, listSize);
-                    GameObject fruit = Instantiate(fruitsPrefabs[typeFruit], start, transform.rotation); // a ajuster via tests
+                    GameObject fruit = Instantiate(fruitsPrefabs[typeFruit], start, transform.rotation);
 
                     fruit.GetComponent<Rigidbody>().velocity = new Vector3(0.0f, fruitSpeed, 0.0f);
 
@@ -76,7 +76,7 @@ public class Spawner : MonoBehaviour
                     float randZ = Random.Range(-width / 2, width / 2);
                     start += new Vector3(randX, 0.0f, randZ);
 
-                    GameObject bomb = Instantiate(bombPrefab, start, transform.rotation * Quaternion.Euler(0, -90, 0)); // a ajuster via tests
+                    GameObject bomb = Instantiate(bombPrefab, start, transform.rotation * Quaternion.Euler(0, -90, 0));
 
                     bomb.GetComponent<Rigidbody>().velocity = new Vector3(fruitSpeed, 0.0f, 0.0f);
                 }
