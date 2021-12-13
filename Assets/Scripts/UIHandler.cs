@@ -19,7 +19,7 @@ public class UIHandler : MonoBehaviour
     void Update()
     {
         textLives.text = "Lives : " + GlobalVars.lives;
-        textTimer.text = "Time : " + (((int)GlobalVars.time)/60) + " : " + (GlobalVars.time%60);
+        textTimer.text = "Time : " + (((int)GlobalVars.time)/60) + " : " + ((float)Mathf.Round((GlobalVars.time%60)*1000f)/1000f);
         textScore.text = "Score : " + GlobalVars.score;
     }
 }

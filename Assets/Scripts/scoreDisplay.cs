@@ -17,10 +17,10 @@ public class scoreDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "High Score/n";
+        scoreText.text = "High Score\n";
         for(int i = 0; i < GlobalVars.bestScore.Count; i++)
         {
-            scoreText.text += i + " : " + GlobalVars.bestScore[i] + "/n";
+            scoreText.text += (i+1) + " : " + GlobalVars.bestScore[i] + "\n";
         }
     }
 }

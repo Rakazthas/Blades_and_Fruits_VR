@@ -10,15 +10,15 @@ public class GlobalVars : MonoBehaviour
 
     public static List<int> bestScore;
 
-    public static bool inGame = true;
+    public static bool inGame = false;
     // Start is called before the first frame update
     void Start()
     {
-        bestScore = new List<int>(5);
+        bestScore = new List<int>();
 
         for(int i = 0; i < 5; i++)
         {
-            bestScore[i] = 0;
+            bestScore.Add(0);
         }
     }
 
