@@ -712,9 +712,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4771653325773781819, guid: 087ba44bea3523a40b6f9e74094d0dd5, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1749990438}
+    - target: {fileID: 4771653325773781819, guid: 087ba44bea3523a40b6f9e74094d0dd5, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4771653325773781830, guid: 087ba44bea3523a40b6f9e74094d0dd5, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771653326490746059, guid: 087ba44bea3523a40b6f9e74094d0dd5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 69.399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771653326490746059, guid: 087ba44bea3523a40b6f9e74094d0dd5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15.699997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 087ba44bea3523a40b6f9e74094d0dd5, type: 3}

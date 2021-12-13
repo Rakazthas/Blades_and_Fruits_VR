@@ -16,15 +16,7 @@ public class MenuHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GlobalVars.inGame)
-        {
-            mainMenu.SetActive(false);
-            scoreMenu.SetActive(false);
-        }
-        else
-        {
-            mainMenu.SetActive(true);
-        }
+
     }
 
     public void goToScore()
@@ -42,6 +34,8 @@ public class MenuHandler : MonoBehaviour
     public void play()
     {
         GlobalVars.inGame = true;
+        mainMenu.SetActive(false);
+        scoreMenu.SetActive(false);
     }
 
     public void quit()
