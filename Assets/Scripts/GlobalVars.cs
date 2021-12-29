@@ -30,6 +30,8 @@ public class GlobalVars : MonoBehaviour
 
         if (lives == 0)
         {
+            bestScore.Add(score);
+
             //TODO game over screen
             inGame = false;
             lives = 3;
