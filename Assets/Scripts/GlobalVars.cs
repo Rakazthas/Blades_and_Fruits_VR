@@ -11,6 +11,9 @@ public class GlobalVars : MonoBehaviour
     public static List<int> bestScore;
 
     public static bool inGame = false;
+
+    private static bool invFrame = false;
+    private float invTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,16 @@ public class GlobalVars : MonoBehaviour
         if (inGame)
             time += Time.deltaTime;
 
+        if (invFrame)
+        {
+            invTime += Time.deltaTime;
+            if(invTime > 1)
+            {
+                invFrame = false;
+                invTime = 0;
+            }
+        }
+
         if (lives == 0)
         {
             bestScore.Add(score);
@@ -35,6 +48,15 @@ public class GlobalVars : MonoBehaviour
             //TODO game over screen
             inGame = false;
             lives = 3;
+        }
+    }
+
+    public static void Hurt()
+    {
+        if (!invFrame)
+        {
+            lives -= 1;
+            invFrame = true;
         }
     }
 }

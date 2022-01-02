@@ -22,7 +22,7 @@ public class despawn : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Sliceable"))
         {
             if (!other.CompareTag("Bomb"))
-                GlobalVars.lives -= 1;
+                GlobalVars.Hurt();
 
             Destroy(other.gameObject);
         }
