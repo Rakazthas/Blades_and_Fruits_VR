@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialAfterSlice: {fileID: 0}
+  sparkle: {fileID: 0}
   sliceMask:
     serializedVersion: 2
     m_Bits: 64

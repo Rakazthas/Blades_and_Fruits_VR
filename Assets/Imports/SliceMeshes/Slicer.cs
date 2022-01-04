@@ -3,6 +3,8 @@ using EzySlice;
 public class Slicer : MonoBehaviour
 {
     public Material materialAfterSlice;
+
+    public Transform sparkle;
     public LayerMask sliceMask;
     public bool isTouched;
 
@@ -49,6 +51,8 @@ public class Slicer : MonoBehaviour
 
                 timer = sliceDelay;
             }
+
+            sparkle.GetComponent<ParticleSystem>().Play();
         }
     }
 

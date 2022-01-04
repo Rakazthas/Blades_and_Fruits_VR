@@ -6,7 +6,7 @@ public class GlobalVars : MonoBehaviour
 {
     public static float time = 0.0f;
     public static int score = 0;
-    public static int lives = 3;
+    public static int lives = 10;
 
     public static List<int> bestScore;
 
