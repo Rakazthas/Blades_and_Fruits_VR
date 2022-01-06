@@ -5,6 +5,7 @@ public class Slicer : MonoBehaviour
     public Material materialAfterSlice;
 
     public Transform sparkle;
+    public Transform SoundEffect;
     public LayerMask sliceMask;
     public bool isTouched;
 
@@ -53,6 +54,7 @@ public class Slicer : MonoBehaviour
             }
 
             sparkle.GetComponent<ParticleSystem>().Play();
+            SoundEffect.GetComponent<AudioSource>().Play();
         }
     }
 

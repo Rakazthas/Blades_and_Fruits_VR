@@ -218,7 +218,7 @@ MonoBehaviour:
   diffChangeTimer: 10
   bombBaseProba: 0.2
   maxNbObjects: 4
-  fruitSpeed: 5
+  fruitSpeed: 3
   fruitsPrefabs:
   - {fileID: 3597852895513546060, guid: f0476a017de06cb48b0a24f2f3ef1a29, type: 3}
   - {fileID: 7945807206814606387, guid: 34f55d3145b41f347aaa5d3a3a4ee0dc, type: 3}
@@ -1668,6 +1668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07c62837bf2b7647ab230c6819612ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLives: 10
   mainMenu: {fileID: 875420486}
 --- !u!4 &494362058
 Transform:
@@ -4567,7 +4568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1077341880116924619, guid: 1e7d075895a7b414cbdd6a54979b808e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e7d075895a7b414cbdd6a54979b808e, type: 3}
@@ -4780,6 +4781,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4436997234605789931, guid: cfabd7e38918ffd429b3042b1d4ca0f5, type: 3}
+      propertyPath: SoundEffect
+      value: 
+      objectReference: {fileID: 1636717952}
+    - target: {fileID: 4436997234605789931, guid: cfabd7e38918ffd429b3042b1d4ca0f5, type: 3}
       propertyPath: materialAfterSlice
       value: 
       objectReference: {fileID: 2100000, guid: 99c9123046cf9fe49afdf77b3635b58e, type: 2}
@@ -4789,12 +4794,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4436997234672893741, guid: cfabd7e38918ffd429b3042b1d4ca0f5, type: 3}
       propertyPath: m_Volume
-      value: 0.111
+      value: 0.044
       objectReference: {fileID: 0}
     - target: {fileID: 4436997234672893741, guid: cfabd7e38918ffd429b3042b1d4ca0f5, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4436997234672893741, guid: cfabd7e38918ffd429b3042b1d4ca0f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dc85f6376f6a1b498ab9d302c643272, type: 3}
     - target: {fileID: 4436997236000992757, guid: cfabd7e38918ffd429b3042b1d4ca0f5, type: 3}
       propertyPath: m_Name
       value: XR Rig
@@ -4809,7 +4818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4436997236000992760, guid: cfabd7e38918ffd429b3042b1d4ca0f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.584
       objectReference: {fileID: 0}
     - target: {fileID: 4436997236000992760, guid: cfabd7e38918ffd429b3042b1d4ca0f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5237,7 +5246,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a1c1efc5744bd3044b738f96cc5906ed, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.21
   m_Pitch: 1
