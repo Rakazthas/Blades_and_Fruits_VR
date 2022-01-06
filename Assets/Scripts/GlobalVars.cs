@@ -47,6 +47,9 @@ public class GlobalVars : MonoBehaviour
         if (lives == 0)
         {
             bestScore.Add(score);
+            bestScore.Sort();
+            bestScore.Reverse();
+            bestScore.RemoveAt(5);
 
             //TODO game over screen
             inGame = false;
