@@ -7,10 +7,13 @@ public class GlobalVars : MonoBehaviour
     public static float time = 0.0f;
     public static int score = 0;
     public static int lives = 10;
+    public int maxLives = 10;
 
     public static List<int> bestScore;
 
     public static bool inGame = false;
+
+    public GameObject mainMenu;
 
     private static bool invFrame = false;
     private float invTime = 0;
@@ -47,7 +50,8 @@ public class GlobalVars : MonoBehaviour
 
             //TODO game over screen
             inGame = false;
-            lives = 3;
+            lives = maxLives;
+            mainMenu.SetActive(true);
         }
     }
 
