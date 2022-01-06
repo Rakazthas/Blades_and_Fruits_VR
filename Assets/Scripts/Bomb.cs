@@ -20,7 +20,7 @@ public class Bomb : MonoBehaviour
     {
         if (other.CompareTag("Sword"))
         {
-            GlobalVars.lives -= 1;
+            GlobalVars.Hurt();
             //TODO anim explosion
             Destroy(this.gameObject);
         }
