@@ -88,6 +88,12 @@ public class Spawner : MonoBehaviour
                 currDiff += 1;
             }
         }
+        else
+        {
+            currDiff = 1;
+            timer = 1 / (baseFrequency * currDiff);
+            diffTimer = diffChangeTimer;
+        }
         
     }
 }
